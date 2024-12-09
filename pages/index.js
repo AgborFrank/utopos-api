@@ -51,11 +51,12 @@ export default function Home() {
 
   return (
     <>
-      <section className="h-screen items-center bg-gray-100">
+      <section className="px-6 md:px-0 items-center bg-black py-20 min-h-screen">
         <div className="max-w-screen-xl mx-auto h-full">
           <div className="flex flex-col justify-center items-center h-full">
             <div className="text-center max-w-xl mx-auto mb-12">
-              <h1 className="text-6xl font-geist-sans text-black">
+              <Image src="/assets/logo.png" width={200} height={100} alt="Utopos Logo" className="mx-auto mb-12" />
+              <h1 className="md:text-6xl text-4xl font-geist-sans text-white">
                 Utopos Smart Contract Project API
               </h1>
               <p className="text-geist-mono mt-8 text-gray-500">
@@ -63,17 +64,17 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-4 gap-2 mt-8 text-black">
+            <div className="grid md:grid-cols-4 grid-cols-2 gap-2 mt-8 text-black">
               {/* Total Supply */}
-              <div className="bg-white shadow hover:shadow-xl px-4 py-6 flex flex-col space-y-3">
-                <h3 className="font-bold text-xl">Total Supply</h3>
+              <div className="bg-white/5 border-purple-400 border text-white rounded-xl shadow hover:shadow-xl px-4 py-6 flex flex-col space-y-3">
+                <h3 className="font-bold text-xl ">Total Supply</h3>
                 <p className="text-sm opacity-80">
                   {loading ? "Loading..." : totalSupply || "Click Request to fetch total supply."}
                 </p>
                 <div className="mt-auto">
                   <button
                     onClick={fetchTotalSupply}
-                    className="hover:bg-gray-800 bg-gray-200 text-black hover:text-white text-md font-geist-sans px-6 py-1 rounded-full"
+                    className="hover:bg-gray-800 bg-white text-black hover:text-white text-md font-geist-sans px-6 py-1 rounded-full"
                   >
                     Request
                   </button>
@@ -81,7 +82,7 @@ export default function Home() {
               </div>
 
               {/* Circulating Supply */}
-              <div className="bg-white shadow hover:shadow-xl px-4 py-6 flex flex-col space-y-3">
+              <div className="bg-white/5 border-purple-400 border text-white rounded-xl shadow hover:shadow-xl px-4 py-6 flex flex-col space-y-3">
                 <h3 className="font-bold text-xl">Circulating Supply</h3>
                 <p className="text-sm opacity-80">
                   {loading ? "Loading..." : circulatingSupply || "Click Request to fetch circulating supply."}
@@ -89,24 +90,24 @@ export default function Home() {
                 <div className="mt-auto">
                   <button
                     onClick={fetchCirculatingSupply}
-                    className="hover:bg-gray-800 bg-gray-200 text-black hover:text-white text-md font-geist-sans px-6 py-1 rounded-full"
+                    className="hover:bg-gray-800 bg-white text-black hover:text-white text-md font-geist-sans px-6 py-1 rounded-full"
                   >
                     Request
                   </button>
                 </div>
               </div>
 
-              <div className="bg-white shadow hover:shadow-xl px-4 py-6 flex flex-col space-y-3">
+              <div className="bg-white/5 border-purple-400 border text-white rounded-xl shadow hover:shadow-xl px-4 py-6 flex flex-col space-y-3">
                 <h3 className="font-bold text-xl">Token Holders</h3>
                 <p className="text-sm opacity-80">
                   Get the list of UTOP token holders.
                 </p>
                 <div className="mt-auto">
-                  <Link href="/docs" className="hover:bg-gray-800 bg-gray-200 text-black hover:text-white text-md font-geist-sans px-6 py-1 rounded-full">Request
+                  <Link href="/docs" className="hover:bg-white bg-gray-200 text-black hover:text-white text-md font-geist-sans px-6 py-1 rounded-full">Request
                   </Link>
                   </div>
               </div>
-              <div className="bg-white shadow hover:shadow-xl px-4 py-6 flex flex-col space-y-3">
+              <div className="bg-white/5 border-purple-400 border rounded-xl text-white shadow hover:shadow-xl px-4 py-6 flex flex-col space-y-3">
                 <h3 className="font-bold text-xl">Token Meta Data</h3>
                 <p className="text-sm opacity-80">
                   Get the metadata of the UTOP token.
